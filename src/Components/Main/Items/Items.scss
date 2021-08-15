@@ -1,0 +1,124 @@
+@import '../../../styles/abstract/variables';
+
+.items {
+  &__list {
+    list-style: none;
+    display: grid;
+    grid-gap: 40px 10px;
+    grid-template-columns: 1fr 1fr;
+
+    @media (min-width: $medium) {
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    @media (min-width: $extra-large) {
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+
+    .modal__base & {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  &__pagination {
+    font-size: 20px;
+    background-color: var(--wpMainOpacity);
+    border: 1px solid var(--wpYello);
+    color: white;
+    width: 200px;
+    border-radius: 8px;
+    padding: 15px;
+    margin: 40px auto;
+    display: block;
+    cursor: pointer;
+  }
+}
+
+.item {
+  &__base {
+    border: 1px solid var(--wpYellow);
+    border-radius: 24px;
+  }
+
+  &__details {
+    padding: 20px;
+  }
+
+  &__action {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 15px;
+  }
+
+  &__title {
+    font-size: 18px;
+  }
+
+  &__price {
+    margin-top: 10px;
+    font-size: 16px;
+    font-weight: 300;
+
+    @media (min-width: $medium) {
+      margin-top: 0;
+    }
+  }
+
+  &__title,
+  &__price {
+    @media (min-width: $medium) {
+      margin-right: 10px;
+      display: block;
+    }
+  }
+
+  &__description {
+    font-size: 14px;
+    font-weight: 300;
+    margin-top: 15px;
+  }
+
+  &__img {
+    width: 100%;
+    object-fit: cover;
+    height: 125px;
+    border-top-right-radius: 23px;
+    border-top-left-radius: 23px;
+
+    @media (min-width: $medium) {
+      height: 250px;
+    }
+  }
+
+  &__createdBy {
+    font-size: 14px;
+    font-weight: 300;
+    display: block;
+    margin-top: 25px;
+  }
+
+  &__email {
+    display: block;
+    color: var(--wpMain);
+    font-weight: 400;
+    word-break: break-word;
+  }
+
+  &__cta {
+    cursor: pointer;
+    height: 25px;
+    width: 25px;
+    color: var(--wpRed);
+    margin-top: 10px;
+
+    &--unfav {
+      fill: var(--wpRed);
+      color: #fff;
+    }
+
+    @media (min-width: $medium) {
+      margin-top: 0;
+    }
+  }
+}

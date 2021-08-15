@@ -1,0 +1,64 @@
+@import '../../../styles/abstract/variables';
+
+.modal {
+  &__base {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    z-index: 2;
+  }
+
+  &__overlay {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(128, 114, 102, 0.5);
+  }
+
+  &__search {
+    border: 2px solid var(--black);
+    width: 100%;
+    border-radius: 4px;
+    padding: 5px;
+    margin-bottom: 25px;
+  }
+
+  &__content {
+    background: white;
+    position: absolute;
+    height: calc(100vh - 40px);
+    width: calc(100vw - 40px);
+    top: 20px;
+    right: 0;
+    bottom: 0;
+    left: 20px;
+    padding: 70px 20px 20px 20px;
+    border-radius: 10px;
+    overflow: auto;
+
+    @media (min-width: $medium) {
+      top: 50%;
+      left: 50%;
+      max-height: calc(100vh - 40px);
+      max-width: 500px;
+      transform: translate(-50%, -50%);
+    }
+  }
+
+  &__close {
+    background: none;
+    border: none;
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    cursor: pointer;
+    
+    svg {    
+      color: var(--wpMain);
+      height: 30px;
+      width: 30px;
+    }
+  }
+}

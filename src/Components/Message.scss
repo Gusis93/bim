@@ -1,0 +1,15 @@
+.message {
+  &__base {
+    margin-top: 100px;
+
+    .modal__base & {
+      margin-top: 40px;
+    }
+  }
+
+  &__txt {
+    font-size: 27px;
+    text-align: center;
+    color: var(--wpMain);
+  }
+}

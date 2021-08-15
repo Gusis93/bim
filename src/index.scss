@@ -1,0 +1,25 @@
+@import './styles/abstract/variables';
+@import './styles/main';
+
+html {
+  --wpMain: #12C2AC;
+  --wpMainOpacity: rgba(20, 194, 172, .7);
+  --wpYellow: rgba(225, 225, 101, 1);
+  --wpRed: #FD6C67;
+  --white: #ffffff;
+  --black: #263238;
+  --grey: #ECEFF1;
+  --lightGrey: #f0f3f7;
+  --red: #ff2252;
+  --yellow: #ffb200;
+  --containerSize: 1280px;
+  box-sizing: border-box;
+  font-size: 10px;
+  height: 100%;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+  height: 100%;
+}

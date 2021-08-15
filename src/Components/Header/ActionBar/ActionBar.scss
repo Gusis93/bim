@@ -1,0 +1,58 @@
+@import '../../../styles/abstract/variables';
+
+.actionBar {
+  &__base {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+
+  &__fav {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    button {
+      background: none;
+      border: none;
+    }
+
+    &Hl {
+      font-size: 14px;
+      font-weight: 300;
+      display: block;
+    }
+
+    &Icon {
+      color: var(--wpRed);
+      margin-top: 5px;
+      width: 30px;
+      height: 30px;
+      cursor: pointer;
+    }
+  }
+
+  &__sort {
+    &Hl {
+      font-size: 14px;
+      font-weight: 300;
+      display: block;
+      margin-top: 25px;
+    }
+
+    select {
+      width: 100%;
+      margin-top: 5px;
+      background: none;
+      border: 1px solid var(--wpMain);
+      border-radius: 4px;
+      padding: 5px 10px;
+      font-size: 14px;
+      color: var(--black);
+
+      @media (min-width: $medium) {
+        width: auto;
+      }
+    }
+  }
+}

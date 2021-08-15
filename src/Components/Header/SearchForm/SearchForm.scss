@@ -1,0 +1,163 @@
+@import '../../../styles//abstract/variables';
+
+.searchForm {
+  &__form {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    width: 100%;
+    margin-right: 25px;
+    overflow: hidden;
+    margin-top: 25px;
+
+    @media (min-width: $medium) {
+      flex-direction: row;
+      margin-top: 0;
+    }
+  }
+
+  &__fieldset {
+    flex: 1 1;
+    transition: max-height 0.25s ease-in;
+    max-height: 45px;
+    width: 100%;
+    overflow: hidden;
+
+    @media (min-width: $medium) {
+      margin-right: 15px;
+    }
+
+    &--expanded {
+      max-height: 255px;
+      overflow: visible;
+    }
+  }
+
+  &__advancedFieldset {
+    display: grid;
+    margin-top: 25px;
+
+    @media (max-width: $mediumMax) {
+      grid-gap: 15px;
+      grid-template-rows: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
+      grid-template-areas:
+        'a a a'
+        'b c c'
+        'b c c';
+    }
+
+    @media (min-width: $medium) {
+      grid-template-columns: 1fr 1fr 1fr;
+      grid-gap: 15px;
+    }
+  }
+
+  &__mainBar {
+    position: relative;
+  }
+
+  &__input {
+    border: none;
+    background: none;
+    height: 45px;
+    width: 100%;
+    padding: 10px 15px;
+    font-size: 16px;
+    border: 2px solid var(--black);
+    border-radius: 4px;
+
+    &:focus {
+      outline: none;
+    }
+
+    &::placeholder {
+      color: var(--black);
+    }
+
+    .searchForm__advancedFieldset & {
+      @media (max-width: $mediumMax) {
+        &:not(:first-child) {
+          margin-top: 10px;
+        }
+
+        &:nth-child(1) {
+          grid-area: a;
+        }
+
+        &:nth-child(2) {
+          grid-area: b;
+        }
+
+        &:nth-child(3) {
+          grid-area: c;
+        }
+      }
+    }
+  }
+
+  &__cta {
+    background: none;
+    border: 2px solid vaR(--wpMain);
+    border-radius: 8px;
+    cursor: pointer;
+    margin-top: 25px;
+    transition: transform 0.25s ease-in-out;
+    height: 45px;
+    width: 100%;
+
+    svg {
+      width: 30px;
+      height: 30px;
+      color: var(--wpMainOpacity);
+      display: none;
+    }
+
+    &--reset {
+      position: absolute;
+      right: 10px;
+      margin: 0;
+      top: 7px;
+      width: auto;
+      height: auto;
+      border: none;
+
+      span {
+        display: none;
+      }
+
+      svg {
+        color: var(--wpRed);
+        display: block;
+      }
+    }
+
+    @media (min-width: $medium) {
+      padding: 0;
+      border: none;
+      height: auto;
+      width: 30px;
+      margin-top: 10px;
+
+      &:not(:last-child) {
+        margin-right: 10px;
+      }
+
+      svg {
+        display: block;
+      }
+
+      &--reset {
+        margin-top: 0;
+      }
+
+      &--expanded {
+        transform: rotateX(180deg);
+      }
+
+      &--text {
+        display: none;
+      }
+    }
+  }
+}

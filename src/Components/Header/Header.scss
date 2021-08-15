@@ -1,0 +1,55 @@
+@import '../../styles/abstract/variables';
+
+.header {
+  &__pageHL {
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10px;
+
+    &--title {
+      font-size: 40px;
+      font-weight: 600;
+      color: var(--wpMain);
+    }
+
+    @media (min-width: $medium) {
+      text-align: left;
+      margin-top: 6px;
+      margin-right: 25px;
+
+      &--title {
+        font-size: 32px;
+      }
+    }
+  }
+
+  &__wrapper {
+    background-color: var(--grey);
+    width: 100%;
+    padding-top: 25px;
+    padding-bottom: 25px;
+    box-shadow: 1px -5px 8px 2px var(--wpMain);
+
+    @media (min-width: $medium) {
+      display: flex;
+      justify-content: center;
+      padding-left: 25px;
+      padding-right: 25px;
+
+      &Form {
+        display: flex;
+        align-items: flex-start;
+        justify-content: center;
+        max-width: 80% !important;
+      }
+    }
+
+    @media (min-width: $extra-large) {
+      &Form {
+        max-width: 60% !important;
+      }
+    }
+  }
+}
